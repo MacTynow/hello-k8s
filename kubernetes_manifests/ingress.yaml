@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-python
+  labels:
+    app: hello-python
+spec:
+  rules:
+    - host: python.data-engineering.myteksi.net
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: hello-python
+              servicePort: 5000
